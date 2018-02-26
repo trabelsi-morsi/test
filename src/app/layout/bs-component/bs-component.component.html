@@ -8,17 +8,23 @@
             <table class="card-body table table-hover">
                 <thead>
                     <tr>
-                        <th>ID</th>
+                        <!-- <th>ID</th> -->
                         <th>Runtime Platform</th>
                         <th>App Version Name</th>
+                        <th>Exercise Type</th>
+                        <th>Difficulty Level</th>
+                        <th>Score</th>
                     </tr>
                 </thead>
                 <tbody>
                     <ng-container *ngFor="let item of alldata">
                         <tr (click)="open(content,item)">
-                            <th scope="row">{{item.id}}</th>
-                            <td>{{item.runtimePlatform }}</td>
-                            <td>{{item.appVersionName}}</td>
+                            <!-- <th scope="row">{{item.id}}</th> -->
+                            <td>{{item.RuntimePlatform }}</td>
+                            <td>{{item.AppVersionName}}</td>
+                            <td>{{item.ExerciseInfo.Type.Case}}</td>
+                            <td>{{item.ExerciseInfo.DifficultyLevel}}</td>
+                            <td>{{item.GameScore.PlayerLotusCount}}/{{item.GameScore.TotalLotusCount}}</td>
                         </tr>
                     </ng-container>
                 </tbody>
@@ -39,9 +45,8 @@
                 </div> -->
                 <div class="card-body">
 
-                    <canvas baseChart [datasets]="lineChartData" [labels]="lineChartLabels" 
-                    [options]="lineChartOptions" [chartType]="lineChartType"
-                    (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+                    <canvas baseChart [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions" [chartType]="lineChartType"
+                        (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
 
                 </div>
                 <!-- <div class="card-footer">

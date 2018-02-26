@@ -34,18 +34,18 @@ export class BsComponentComponent implements OnInit {
     }
 
     open(content: any, item: any) {
-
+        console.log(item.RecordingData.Fields[0]);
         this.lineChartData = [];
         this.lineChartLabels = [];
 
         let playerPositionY: Array<any> = [];
         let targetPositionY: Array<any> = [];
 
-        let dataitem = item.recordingData.frames;
+        let dataitem = item.RecordingData.Fields[0].Frames;
         for (let frame of dataitem) {
-            this.lineChartLabels.push(frame.timestamp);
-            playerPositionY.push(frame.playerPositionY);
-            targetPositionY.push(frame.targetPositionY);
+            this.lineChartLabels.push(frame.Timestamp);
+            playerPositionY.push(frame.PlayerPositionY);
+            targetPositionY.push(frame.TargetPositionY);
         }
 
         this.lineChartData = [
