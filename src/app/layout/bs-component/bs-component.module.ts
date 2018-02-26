@@ -7,6 +7,7 @@ import { BsComponentRoutingModule } from './bs-component-routing.module';
 import { BsComponentComponent } from './bs-component.component';
 import { ChartsModule as Ng2Charts } from 'ng2-charts';
 
+import { AmChartsModule } from '@amcharts/amcharts3-angular';
 @NgModule({
     imports: [
         CommonModule,
@@ -14,7 +15,9 @@ import { ChartsModule as Ng2Charts } from 'ng2-charts';
         FormsModule,
         ReactiveFormsModule,
         NgbModule.forRoot(),
-        Ng2Charts
+        Ng2Charts,
+        AmChartsModule
+
     ],
     declarations: [
         BsComponentComponent
